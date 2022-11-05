@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "open sans";
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.wrapper h1 {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 3rem;
+}
+.wrapper input.value {
+  display: block;
+  margin: 20px auto;
+  font-size: 2.4rem;
+  padding: 5px 0 0 10px;
+  border: 2px solid #666;
+  border-radius: 5px;
+}
+.wrapper .play {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 50px;
+  border: 2px solid #333;
+  font-size: 2rem;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.wrapper .play:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.cards .card {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  min-width: 80px;
+  height: 200px;
+  min-height: 100px;
+  background-color: #ddd;
+  -webkit-box-shadow: 0 0 3px #333;
+          box-shadow: 0 0 3px #333;
+}
+
+.statistics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.4rem;
+}
+.statistics .stats {
+  justify-self: start;
+  margin-right: 150px;
+}
+.statistics .wallet, .statistics .game-result, .statistics .game-count, .statistics .wins, .statistics .losses {
+  font-weight: bold;
+  font-size: 1.4em;
+}/*# sourceMappingURL=style.css.map */
