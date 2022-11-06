@@ -68,16 +68,11 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   font-size: 1.4rem;
 }
-.statistics .stats {
-  justify-self: start;
-  margin-right: 120px;
-}
-.statistics .wallet, .statistics .game-result, .statistics .game-count, .statistics .wins, .statistics .losses {
+.statistics .wallet, .statistics .games-number, .statistics .game-result, .statistics .wins, .statistics .losses {
   font-weight: bold;
   font-size: 1.4em;
 }/*# sourceMappingURL=style.css.map */
