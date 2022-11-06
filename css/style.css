@@ -75,7 +75,7 @@ html {
 }
 .statistics .stats {
   justify-self: start;
-  margin-right: 150px;
+  margin-right: 120px;
 }
 .statistics .wallet, .statistics .game-result, .statistics .game-count, .statistics .wins, .statistics .losses {
   font-weight: bold;
