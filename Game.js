@@ -52,12 +52,9 @@ class Game {
 
     const draw = new Draw();
 
-    // true or false
     const gameResult = Result.checkWinner(draw.getDrawResult());
     this.stats.addGameToResults(gameResult, bid);
-    // console.log(result);
 
-    // 66 or 0
     const wonMoney = Result.moneyWinInGame(gameResult, bid);
 
     if (wonMoney) {
