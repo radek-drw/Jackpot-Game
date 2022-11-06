@@ -5,11 +5,13 @@ class Game {
     this.stats = new Statistics();
 
     this.cards = document.querySelectorAll('.card');
+    this.bidValue = document.querySelector('.bid-value');
     this.spanWallet = document.querySelector('.wallet');
     this.spanResult = document.querySelector('.game-result');
     this.gameCount = document.querySelector('.games-number');
     this.wins = document.querySelector('.wins');
     this.losses = document.querySelector('.losses');
+    document.querySelector('.play').addEventListener('click', this.startGame.bind(this));
 
     this.render();
   }
@@ -30,7 +32,7 @@ class Game {
 
     if (result) {
       result = `You won: ${wonMoney}$`
-    } else if (!result && result != '') {
+    } else if (!result && result !== '') {
       result = `You lost: ${bid}$`
     }
     this.spanResult.textContent = result;
@@ -41,7 +43,37 @@ class Game {
   }
 
   startGame() {
+    const bid = Math.floor(this.bidValue.value);
+    this.bidValue.value = '';
 
+    if (bid < 1) return alert('Bid value has to be at least 1$');
+
+    if (!this.wallet.checkCanPlay(bid)) return alert('You money amount is too low to play');
+
+    const draw = new Draw();
+
+    // true or false
+    const gameResult = Result.checkWinner(draw.getDrawResult());
+    this.stats.addGameToResults(gameResult, bid);
+    // console.log(result);
+
+    // 66 or 0
+    const wonMoney = Result.moneyWinInGame(gameResult, bid);
+
+    if (wonMoney) {
+      this.wallet.changeWalletValue(wonMoney);
+    } else {
+      this.wallet.changeWalletValue(bid, '-');
+    }
+
+    this.render(
+      draw.getDrawResult(),
+      this.wallet.getWalletValue(),
+      gameResult,
+      wonMoney,
+      bid,
+      this.stats.showGameResults()
+    )
   }
 
 }
