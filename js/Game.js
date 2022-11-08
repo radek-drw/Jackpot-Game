@@ -48,7 +48,7 @@ class Game {
 
     if (bid < 1) return alert('Bid value has to be at least 1$');
 
-    if (!this.wallet.checkCanPlay(bid)) return alert('You money amount is too low to play');
+    if (!this.wallet.checkCanPlay(bid)) return alert('Your money amount is too low to play');
 
     const draw = new Draw();
 
